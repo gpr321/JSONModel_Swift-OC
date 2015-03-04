@@ -29,6 +29,11 @@ import UIKit
     ///  key: 属性名字 value: 将来要转化为字典的value的值
     ///  :returns:  映射字典
     func customPropertyValue2DictionaryValueMap() -> [String: AnyObject]
+    
+    ///  在归档的时候指定该方法可以避免某些指定的属性归档
+    ///
+    ///  :returns: 指定的属性名数组
+    static func encodeIgnoreProperties() -> [String]
 }
 
 // MARK: JSONModelSerializer - 字典转模型
@@ -51,7 +56,7 @@ extension JSONModelSerializer {
             let dictValue: AnyObject? = dict[propertyKey]
 
             if dictValue == nil || dictValue?.classForCoder === NSNull.classForCoder(){
-                obj.setValue(nil, forKey: pName)
+//                obj.setValue(nil, forKey: pName)
                 continue
             }
             resultValue = dictValue!
@@ -150,7 +155,6 @@ extension JSONModelSerializer {
                 // 获取调用者指定的字典 value
                 let customDictValue: AnyObject? = self.customPropertyValue2DictionaryValueWith(model, propertyName: pName)
                 if customDictValue != nil {
-                    println("----\(dictionaryKey)")
                     modelDict[dictionaryKey] = customDictValue!
                     continue
                 }
@@ -341,8 +345,16 @@ extension JSONModelSerializer {
     
     // MARK: 归档方法
     public func encoderObject(obj: AnyObject, encdoer: NSCoder) {
-        let info = self.modelClassInfo(obj.classForCoder)
+        let cls: AnyClass! = obj.classForCoder
+        let info = self.modelClassInfo(cls)
+        var ignoreArray: NSArray? = nil
+        if cls.respondsToSelector("encodeIgnoreProperties") {
+            ignoreArray = cls.encodeIgnoreProperties()
+        }
         for (pName, propertyModel) in info!.properties {
+            if (ignoreArray != nil && ignoreArray!.containsObject(pName)) {
+                continue
+            }
             if let pValue: AnyObject = obj.valueForKey(pName) {
                 encdoer.encodeObject(pValue, forKey: pName)
             }
