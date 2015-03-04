@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>C7147808-E3AF-4586-9048-C0EEAA7F2547</string>
+	<key>IDESourceControlProjectName</key>
+	<string>JSONModel_Swift-OC</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>4514E666A72AA06CFC0F5E654FEECD7E63098267</key>
+		<string>https://github.com/gpr321/JSONModel_Swift-OC.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>JSONModel_Swift-OC.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>4514E666A72AA06CFC0F5E654FEECD7E63098267</key>
+		<string>..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/gpr321/JSONModel_Swift-OC.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>4514E666A72AA06CFC0F5E654FEECD7E63098267</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>4514E666A72AA06CFC0F5E654FEECD7E63098267</string>
+			<key>IDESourceControlWCCName</key>
+			<string>JSONModel_Swift-OC</string>
+		</dict>
+	</array>
+</dict>
+</plist>
